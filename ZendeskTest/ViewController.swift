@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        clearUserDefaults()
+    }
+
     @IBAction func openHelpCenter(_ sender: Any) {
         guard let nav = navigationController else { return }
 
@@ -22,8 +27,19 @@ class ViewController: UIViewController {
         identity.name = nameTextField.text
         ZDKConfig.instance().userIdentity = identity
 
+        print("Identity setup: \(ZDKConfig.instance().userIdentity.toJson())")
+
         let helpCenter = ZDKHelpCenterOverviewContentModel.defaultContent()
         ZDKHelpCenter.pushOverview(nav, with: helpCenter)
+    }
+
+    func clearUserDefaults() {
+        guard let applicationDomain = Bundle.main.bundleIdentifier else {
+            return
+        }
+
+        UserDefaults.standard.removePersistentDomain(forName: applicationDomain)
+        UserDefaults.standard.synchronize()
     }
 }
 

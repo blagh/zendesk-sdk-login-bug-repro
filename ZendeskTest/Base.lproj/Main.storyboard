@@ -19,9 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="qKF-d3-nN1" kind="show" id="xiL-A0-sJk">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="qKF-d3-nN1" kind="relationship" relationship="rootViewController" id="T7U-FY-qnn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zf-y6-WgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,38 +42,38 @@
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFq-m3-Uxc">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ev6-LF-Zit">
-                                        <rect key="frame" x="0.0" y="31" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfG-lN-KZU">
-                                        <rect key="frame" x="0.0" y="71" width="343" height="21"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alJ-sg-vHe">
-                                        <rect key="frame" x="0.0" y="102" width="343" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="101" width="343" height="30.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1k-54-FRm">
-                                        <rect key="frame" x="0.0" y="142.5" width="343" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="141.5" width="343" height="30"/>
                                         <state key="normal" title="Open Zendesk Help Center"/>
                                         <connections>
                                             <action selector="openHelpCenter:" destination="qKF-d3-nN1" eventType="touchUpInside" id="dEk-uS-Eh1"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8J-Xm-obW">
-                                        <rect key="frame" x="0.0" y="183" width="343" height="420"/>
+                                        <rect key="frame" x="0.0" y="181.5" width="343" height="421.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -89,6 +87,7 @@
                             <constraint firstItem="8uj-q7-seV" firstAttribute="top" secondItem="Iic-XG-ePy" secondAttribute="bottom" id="zmf-hb-dn1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T0e-Ok-hPa"/>
                     <connections>
                         <outlet property="emailTextField" destination="Ev6-LF-Zit" id="a3e-PJ-uUT"/>
                         <outlet property="nameTextField" destination="alJ-sg-vHe" id="v5a-0z-wxj"/>
