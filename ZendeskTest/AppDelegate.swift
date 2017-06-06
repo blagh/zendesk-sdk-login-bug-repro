@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZendeskSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let appId = "5cea52dd1635a5b63fe452d1f74796d8a1453bbf447e0899"
+        let url = "https://freshbooks1495119909.zendesk.com"
+        let clientId = "mobile_sdk_client_d69242fd8a655b0e1253"
+
+        ZDKConfig.instance().initialize(withAppId: appId, zendeskUrl: url, clientId: clientId)
+        ZDKLogger.enable(true)
         return true
     }
 

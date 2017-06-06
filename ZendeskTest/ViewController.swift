@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import ZendeskSDK
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+
+    @IBAction func openHelpCenter(_ sender: Any) {
+        guard let nav = navigationController else { return }
+
+        let identity = ZDKAnonymousIdentity()
+        identity.email = emailTextField.text
+        identity.name = nameTextField.text
+        ZDKConfig.instance().userIdentity = identity
+
+        let helpCenter = ZDKHelpCenterOverviewContentModel.defaultContent()
+        ZDKHelpCenter.pushOverview(nav, with: helpCenter)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
